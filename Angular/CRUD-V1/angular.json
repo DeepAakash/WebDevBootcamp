@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "testQuestPond": {
+    "CRUD-V1": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,11 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test-quest-pond",
+            "outputPath": "dist/crud-v1",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -46,9 +46,12 @@
               "outputHashing": "all"
             },
             "development": {
+              "buildOptimizer": false,
               "optimization": false,
+              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -57,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "testQuestPond:build:production"
+              "browserTarget": "CRUD-V1:build:production"
             },
             "development": {
-              "buildTarget": "testQuestPond:build:development"
+              "browserTarget": "CRUD-V1:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "testQuestPond:build"
+            "browserTarget": "CRUD-V1:build"
           }
         },
         "test": {
@@ -93,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "02e40475-d377-4769-93d8-76c4e6fcae35"
+    "analytics": false
   }
 }

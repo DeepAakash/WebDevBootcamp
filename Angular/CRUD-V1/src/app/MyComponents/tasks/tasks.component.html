@@ -1,0 +1,11 @@
+<div class="container mb-3">
+    <h1 class="text-center">Notes by Aakash</h1>
+    <app-add-task (taskAdd)="addTask($event)"></app-add-task>
+    <h4>Your Notes: </h4>
+    <div *ngIf="this.tasks.length===0; else elseBlock">No notes to display</div>
+    <ng-template #elseBlock>
+        <div *ngFor="let task of tasks; index as i">
+            <app-task-item [task]="task" [i]="i" (taskDelete)="deleteTask($event)" (taskCheckbox)="toggleTask($event)"></app-task-item>
+        </div>
+    </ng-template>
+</div>    

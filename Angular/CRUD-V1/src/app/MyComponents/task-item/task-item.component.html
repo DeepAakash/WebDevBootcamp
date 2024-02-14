@@ -1,0 +1,9 @@
+<div class="my-3">
+    <h5 [ngClass]="{'strike': !task.active}">{{task.title}}</h5>
+    <p [ngClass]="{'strike': !task.active}">{{task.desc}}</p>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="task{{i}}" (click)="onCheckboxClick(task)"  [checked]="!task.active">
+        <label class="form-check-label" for="task{{i}}">Mark as done!</label>
+    </div>
+    <button class="btn btn-danger" (click)="onClick(task)">Delete</button>
+</div>
