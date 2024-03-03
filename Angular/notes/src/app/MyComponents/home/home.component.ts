@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
       height: '500px'
     });
     dialogRef.afterClosed().subscribe(data => {
-      this.apiService.createNote(data.title, data.description).subscribe((result: any)=>{
+      this.apiService.createNote(data.title, data.desc).subscribe((result: any)=>{
         console.log(result);
         this.notes.push(result);
         this.filteredNotes=this.notes;

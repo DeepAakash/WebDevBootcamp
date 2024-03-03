@@ -80,8 +80,8 @@ export class ApiService {
     return '';
   }
 
-  createNote(title: string, description: string){
-    return this.http.post(`${this.API_URL}/notes`, {title, description},{
+  createNote(title: string, desc: string){
+    return this.http.post(`${this.API_URL}/notes`, {title, desc},{
       headers:{
         Authorization: `Bearer ${this.token}`
       }
